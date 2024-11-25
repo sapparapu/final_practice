@@ -1,0 +1,21 @@
+#variable.tf block##################
+variable "bucket_name" {
+    type = string
+    default = ""
+    
+  
+}
+
+main.tf
+-------------------------
+resource "aws_s3_bucket" "dev1" {
+    bucket = var.bucket_name
+  
+}
+
+###########################################################
+# calling module from above created resources**********************
+module "dev1" {
+source = "../modulesource1"
+bucket_name = "vanbuc" 
+}
