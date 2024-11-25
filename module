@@ -1,0 +1,9 @@
+#calling module from module source file .......in this file,already we have required details
+module "dev1" {
+    source = "../module_source"
+    ami = "ami-0453ec754f44f9a4a"
+    instance_type = "t2.micro"
+    key_name = "new_key_us"
+    #name = var.dev_ec2
+    
+}
