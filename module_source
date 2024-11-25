@@ -1,0 +1,32 @@
+#main block ----------------------------------------------
+
+resource "aws_instance" "dev" {
+ ami = var.ami
+ instance_type = var.instance_type
+ key_name = var.key_name
+ tags = {
+   name = "dev_ec2"
+ }
+}
+
+#variables block ---------------------------------------------
+variable "ami" {
+    type = string
+    default = ""
+  
+}
+variable "instance_type" {
+    type = string
+    default = ""
+
+  
+}
+variable "key_name" {
+  type = string
+  default = ""
+}
+variable "name" {
+    default = ""
+    description = "name of ec2 is:dev_ec2"
+  
+}
